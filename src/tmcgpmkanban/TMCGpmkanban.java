@@ -1,4 +1,4 @@
-package tmcgkanban;
+package tmcgpmkanban;
 
 import java.util.Scanner;
 
@@ -14,17 +14,18 @@ public class TMCGpmkanban {
         String choice = "y";
         while (choice.equalsIgnoreCase("y")) {
             // get input from user
-            System.out.print("Enter product code: ");
-            String productCode = sc.nextLine();
+            System.out.print("Enter product noteNumber: ");
+            String noteName = sc.nextLine();
 
             // get the Product object
             TaskDB db = new TaskDB();
-            Note note = db.getProduct(productCode);
+            Note note = db.getNote(noteName);
 
             // display the output
             String message = "\nNOTE\n" +
                 "ID:        " + note.getCode() + "\n" +
-                "Description: " + note.getDescription() + "\n" +
+                "Assigned To:        " + note.getOwner() + "\n" +    
+                "Description: " + note.getDescription() + "\n";
                 
             System.out.println(message);
 
