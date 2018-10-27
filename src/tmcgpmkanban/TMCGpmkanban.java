@@ -1,24 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tmcgpmkanban;
+package tmcgkanban;
 
-/**
- *
- * @author jt_sc
- */
 import java.util.Scanner;
 
 public class TMCGpmkanban {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         // display a welcome message
-        System.out.println("Welcome to the PM Kanban application");
+        System.out.println("Welcome to the Product Viewer");
         System.out.println();
 
         // create 1 or more line items
@@ -26,17 +14,18 @@ public class TMCGpmkanban {
         String choice = "y";
         while (choice.equalsIgnoreCase("y")) {
             // get input from user
-            System.out.print("Enter task name: ");
-            String taskID = sc.nextLine();
+            System.out.print("Enter product code: ");
+            String productCode = sc.nextLine();
 
             // get the Product object
             TaskDB db = new TaskDB();
-            Task task = db.getTask(taskID);
+            Note note = db.getProduct(productCode);
 
             // display the output
-            String message = "\nTASK\n" +
-                "ID:        " + task.getTaskID() + "\n" +
-                "Description: " + task.getTaskDescription() + "\n" +
+            String message = "\nNOTE\n" +
+                "ID:        " + note.getCode() + "\n" +
+                "Description: " + note.getDescription() + "\n" +
+                
             System.out.println(message);
 
             // see if the user wants to continue
@@ -46,5 +35,4 @@ public class TMCGpmkanban {
         }
         System.out.println("Bye!");
     }
-    
 }
