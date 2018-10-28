@@ -13,15 +13,15 @@ public class TaskDB {
 
         // fill the Note object with data
         if (noteName.equalsIgnoreCase("first")) {
-            note = new Note(noteName, "Murach's Java Programming");
+            note = new Note(noteName, "Frank", "Murach's Java Programming");
         } else if (noteName.equalsIgnoreCase("second")) {
-            note = new Note(noteName, "Murach's Java Servlets and JSP");
+            note = new Note(noteName, "Samantha","Murach's Java Servlets and JSP");
         } else if (noteName.equalsIgnoreCase("third")) {
-            note = new Note(noteName, "Murach's MySQL");
+            note = new Note(noteName, "Tiffany", "Murach's MySQL");
         } else if (noteName.equalsIgnoreCase("fourth")) {
-            note = new Note(noteName, "Murach's Android Programming");
+            note = new Note(noteName, "Francis", "Murach's Android Programming");
         } else {
-            note = new Note(noteName, "Unknown");
+            note = new Note(noteName, "Unknown", "Unknown");
         }
         return note;
     }
